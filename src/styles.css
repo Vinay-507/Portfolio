@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --cursor-x: 50%;
+  --cursor-y: 35%;
+}
+
+html {
+  scroll-behavior: auto;
+  background: #030714;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(24, 247, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 0%, rgba(155, 92, 255, 0.13), transparent 30%),
+    #030714;
+}
+
+.light-mode body {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(24, 247, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 82% 0%, rgba(155, 92, 255, 0.16), transparent 30%),
+    #061225;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.typing {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  border-right: 2px solid #18f7ff;
+  white-space: nowrap;
+  animation: typing 4.2s steps(62, end), caret 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 640px) {
+  .typing {
+    white-space: normal;
+    border-right: 0;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
